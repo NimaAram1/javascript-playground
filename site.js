@@ -1,3 +1,4 @@
+
 // change header value
 var header = document.getElementById('web');
 var pre_header = document.getElementById('header_value');
@@ -54,3 +55,80 @@ console.log(person.name)
 // this Keyword
 
 
+const game = {
+    name : 'valorant',
+    install(){
+        console.log(this)
+    }
+}
+game.install()
+
+const install = game.install;
+
+install();
+
+const getdata = {
+    name : 'Ali',
+    getName(){
+        let name2 = prompt('Enter Your Name','Ali')
+        this.name = name2
+    },
+    showHello : function(){
+        alert('Hi '+this.name)
+    }
+}
+
+// getdata.getName()
+// getdata.showHello()
+console.log(getdata.name)
+// bind
+const Show = getdata.getName.bind(getdata);
+const Hello = getdata.showHello.bind(getdata);
+// Show();
+// Hello();
+console.log(getdata.name)
+
+
+// arrow functions
+const square = function(num){
+    return num * num
+}
+
+const square2 = num => num * num
+
+console.log(square(5))
+console.log(square2(5))
+ 
+
+const Languages = [
+    {id:1,name:'HTML',isES6:false},
+    {id:2,name:'CSS',isES6:false},
+    {id:3,name:'JavaScript',isES6:true},
+]
+
+const ES6 = Languages.filter(job => job.isES6)
+console.log(ES6)
+
+
+
+
+
+var j = 0
+const Games = {
+    install(){
+        let ins = setTimeout(() => {
+            this.install()
+            console.log('Game is installing... '+j+'%')
+            j++
+        },20)
+        if(j == 100){
+        clearTimeout(ins)
+        }
+        
+    },
+}
+// Games.install()
+
+
+const colors = ['red','green','blue','orange']
+const items = colors.map(color => `<li>${color}</li>`)
