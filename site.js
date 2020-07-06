@@ -1,4 +1,4 @@
-
+import  Role,{Call}  from './role'
 // change header value
 var header = document.getElementById('web');
 var pre_header = document.getElementById('header_value');
@@ -132,3 +132,60 @@ const Games = {
 
 const colors = ['red','green','blue','orange']
 const items = colors.map(color => `<li>${color}</li>`)
+
+
+const address = {
+    street : '',
+    city : '',
+    country : '',
+};
+
+const street = address.street;
+const city = address.city;
+const country = address.country;
+
+
+const first = [1,2,3]
+const second = [4,5,6]
+
+const combined = first.concat(second)
+combined.sort()
+document.write(combined)
+console.log(...first)
+
+
+
+
+
+
+
+// classes
+
+class Person{
+    constructor(name){
+        this.name = name
+    }
+    hi(){
+        alert(this.name)
+    }
+}
+
+var devHeader = new Person('Nima')
+// devHeader.hi()
+
+class Teacher extends Person{
+    constructor(name,role){
+        super(name)
+        this.role = role
+    }
+    bye(){
+        alert(this.name + ' Role: ' + this.role)
+    }
+}
+  
+
+
+var Nima = new Teacher('Nima','DevHeader')
+Nima.hi()
+Nima.bye()
+var me = Role('.dev')
